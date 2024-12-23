@@ -104,6 +104,8 @@ sh inference.sh
 
 
 ## 测试与评估
+需要下载压缩包image_assessments.zip 
+链接：https://pan.quark.cn/s/8ae33e78c8e9
 
 ​            **1.     在DiffTalk-main项目下运行命令./inference.sh（过程较长，一个视频的所有图片大概需要半个小时，且需要手动停止，否则会直接推理至测试集结束）。图片会保存在DiffTalk-main/logs/inference。每批次处理20个，因此命名格式为批次_序号。**
 
