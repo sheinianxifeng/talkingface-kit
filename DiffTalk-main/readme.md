@@ -113,15 +113,14 @@ sh inference.sh
 
 ​            **3.     执行python rename.py，得到重命名后的推理图像，该图像保存在test_img下，命名格式与原图像命名格式相同（如果不同需要在代码中手动修改保存路径命名部分）**
 
-            **5.     视频合成：**
+  **4. 视频合成**
+​            **1)     执行ffmpeg -i org_video/视频名.mp4 -vn -acodec pcm_s16le -ar 44100 -ac 2 test_audio/输出音频名.wav；**
 
-​            **1)     执行ffmpeg -i org_video/视频名.mp4 -vn -acodec pcm_s16le -ar 44100 -ac 2 test_audio/输出音频		名.wav；**
-
-​            **2)     执行ffmpeg -framerate 25 -i test_img/类别_%d.jpg -c:v libx264 -pix_fmt yuv420p test_video/输出视频	名.mp4；**
+​            **2)     执行ffmpeg -framerate 25 -i test_img/类别_%d.jpg -c:v libx264 -pix_fmt yuv420p test_video/输出视频名.mp4；**
 
 ​            **3)     执行ffmpeg -i test_video/输出视频名.mp4 -i test_audio/输出音频名.wav -c:v copy -c:a aac -strict 	experimental result_video/输出视频名.mp4**
 
-​            **4.     指标检测：**
+​            **5.     指标检测：**
 
 ​	**1）PSNR和SSIM:执行python PSNR&SSIM.py,输出PSNR&SSIM results.txt,内含各行对比结果，最后打印平均	指标。**
 
